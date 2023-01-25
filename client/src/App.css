@@ -1,0 +1,75 @@
+td {
+    text-align: center;
+    padding: 10px 20px;
+}
+
+th {
+   text-align: center;
+   font-size: 22px;
+}
+
+Table{
+    margin-top:10px;
+    font-size: 20px;
+    border: solid 1px ;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.loginModal{
+    display: flex;
+    flex-direction: column;
+}
+
+.loginInput{
+    margin: 5px;
+    height: 30px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button{
+    font-size: 16px;
+    padding: 5px 20px;
+    margin: 5px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+button:active{
+    transform:scale(0.9);
+}
+
+img{
+    width: 30px;
+}
+
+.deleteBut{
+    background-color: red;
+}
+
+.blockBut{
+    background-color: gray;
+}
+
+.unblockBut{
+    background-color: green;
+}
+
+.reloadBut{
+    background-color: rgb(24, 112, 255);
+}
+
+.logoutBut{
+    padding: 10px 20px;
+    background-color: orange;
+    font-weight: bold;
+}
