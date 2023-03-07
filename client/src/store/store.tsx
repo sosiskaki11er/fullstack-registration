@@ -29,6 +29,7 @@ export default class Store {
     async login(email: string, password: string) {
         try{
             const response = await AuthService.login(email, password);
+            localStorage.setItem('user', response.data.user.email);
             localStorage.setItem('token', response.data.accessToken);
             this.setAuth(true);
             this.setUser(response.data.user);
@@ -41,6 +42,7 @@ export default class Store {
         try{
             const response = await AuthService.registration(email, password);
             localStorage.setItem('token', response.data.accessToken);
+            localStorage.setItem('user', response.data.user.email);
             this.setAuth(true);
             this.setUser(response.data.user)
         } catch (e) {
@@ -52,6 +54,7 @@ export default class Store {
         try{
             const response = await AuthService.logout();
             localStorage.removeItem('token');
+            localStorage.removeItem('user')
             this.setAuth(false);
             this.setUser({} as IUser)
         } catch (e) {

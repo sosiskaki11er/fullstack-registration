@@ -20,6 +20,11 @@ function App() {
     }
   }, [])
 
+  useEffect(() => {
+    getUsers()
+  },[])
+  
+
 async function getUsers() {
     try{
       const response = await UserService.fetchUsers();
@@ -28,6 +33,7 @@ async function getUsers() {
 
     }
   }
+
   if(store.isLoading) {
     return <div>Loading...</div>
   }
@@ -53,6 +59,9 @@ async function getUsers() {
     if(users[i].isChecked===true)
     {
       store.deleteUser(users[i].email);
+      if(users[i].email === localStorage.getItem('user')) {
+        store.logout()
+      }
     }
   }
 }
@@ -63,6 +72,9 @@ async function getUsers() {
     if(users[i].isChecked===true)
     {
       store.blockUser(users[i].email);
+      if(users[i].email === localStorage.getItem('user')) {
+        store.logout()
+      }
     }
   }
 }
